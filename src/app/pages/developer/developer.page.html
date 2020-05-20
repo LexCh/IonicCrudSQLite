@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="developers"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Entrenador</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="delete()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding>
+  <div *ngIf="developer">
+    <ion-item>
+      <ion-label position="stacked">¿Cual es su nombre?</ion-label>
+      <ion-input [(ngModel)]="developer.name" placeholder="Nombre Entrenador"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Descripcion de su especialidad</ion-label>
+      <ion-input [(ngModel)]="skills" placeholder="Ejemplo: Aerobicos, Yoga, Capoeria "></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Link de la imagen de Perfil</ion-label>
+      <ion-input [(ngModel)]="developer.img" placeholder="https://..."></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="success" (click)="updateDeveloper()">Actualizar Informacion</ion-button>
+  </div>
+</ion-content>
